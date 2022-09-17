@@ -2,8 +2,8 @@ interface User {
   id: number;
   firstName: string;
   lastName: string;
-  role: "admin" | "user" | "super-admin";
-  posts: Post;
+  role: 'admin' | 'user' | 'super-admin';
+  posts: Post[];
 }
 
 interface Post {
@@ -13,13 +13,13 @@ interface Post {
 
 export const defaultUser: User = {
   id: 1,
-  firstName: "Matt",
-  lastName: "Pocock",
-  role: "admin",
+  firstName: 'Matt',
+  lastName: 'Pocock',
+  role: 'admin',
   posts: [
     {
       id: 1,
-      title: "How I eat so much cheese",
+      title: 'How I eat so much cheese',
     },
     {
       id: 2,
