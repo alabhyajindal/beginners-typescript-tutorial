@@ -1,4 +1,4 @@
-import { Equal, Expect } from "./helpers/type-utils";
+import { Equal, Expect } from './helpers/type-utils';
 
 /**
  * Here, the id property is shared between all three
@@ -6,19 +6,21 @@ import { Equal, Expect } from "./helpers/type-utils";
  * make it more DRY?
  */
 
-interface User {
+interface Id {
   id: string;
+}
+interface User extends Id {
   firstName: string;
   lastName: string;
 }
 
-interface Post {
+interface Post extends Id {
   id: string;
   title: string;
   body: string;
 }
 
-interface Comment {
+interface Comment extends Id {
   id: string;
   comment: string;
 }
@@ -26,5 +28,5 @@ interface Comment {
 type tests = [
   Expect<Equal<User, { id: string; firstName: string; lastName: string }>>,
   Expect<Equal<Post, { id: string; title: string; body: string }>>,
-  Expect<Equal<Comment, { id: string; comment: string }>>,
+  Expect<Equal<Comment, { id: string; comment: string }>>
 ];
